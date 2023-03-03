@@ -119,7 +119,7 @@ RUN set -eux; \
 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
 # Remove plperl, plpython and pltcl dependencies by default to save image size
 # To use the pl extensions, those have to be installed in a derived image
-			| grep -v -e perl -e python -e tcl \
+		#	| grep -v -e perl -e python -e tcl \
 	)"; \
 	apk add --no-cache --virtual .postgresql-rundeps \
 		$runDeps \
